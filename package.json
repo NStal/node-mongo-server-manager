@@ -1,0 +1,20 @@
+{
+  "name": "mongo-server-manager",
+  "version": "0.0.0",
+  "description": "Helper for manage mongod",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec -b -t 600000 --compilers coffee:coffee-script/register test/test.coffee"
+  },
+  "keywords": [
+    "mongodb"
+  ],
+  "author": "NStal",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "coffee-script": "^1.7.1",
+    "mongodb": "^1.4.5",
+    "portscanner": "^0.2.3"
+  }
+}
