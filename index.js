@@ -1,2 +1,2 @@
 require("coffee-script/register")
-module.exports = require("lib/mongoServerManager")
+module.exports = require("./lib/mongoServerManager")

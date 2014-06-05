@@ -1,4 +1,4 @@
-manager = require "../lib/mongoServerManager"
+manager = require "../"
 service = manager.createInstance {
     logPath:"./test/db/log"
     ,pidPath:"./test/db/mongod.pid"
