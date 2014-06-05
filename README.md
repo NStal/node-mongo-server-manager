@@ -2,7 +2,12 @@
 ```bash
 npm install mongo-server-manager
 ```
+# Test
+require coffee-script and mocha to be installed.
 
+```bash
+npm test
+```
 # Usage
 
 I use this module to manage a mongod instance for a desktop application as an embeded database.
