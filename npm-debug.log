@@ -1,0 +1,104 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'publish' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /home/wuminghan/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+12 verbose folder .
+13 info prepublish mongo-server-manager@0.0.1
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /home/wuminghan/.npm/1f1177db-tar.lock
+16 silly lockFile ac424e15-50333-0-6750019954051822-tmp-tgz tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+17 verbose lock tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz /home/wuminghan/.npm/ac424e15-50333-0-6750019954051822-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile ac424e15-50333-0-6750019954051822-tmp-tgz tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+21 silly lockFile ac424e15-50333-0-6750019954051822-tmp-tgz tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+22 verbose tar unpack /home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+23 silly lockFile 8e90a294-ngo-server-manager-0-0-1-package tar:///home/wuminghan/.npm/mongo-server-manager/0.0.1/package
+24 verbose lock tar:///home/wuminghan/.npm/mongo-server-manager/0.0.1/package /home/wuminghan/.npm/8e90a294-ngo-server-manager-0-0-1-package.lock
+25 silly lockFile ac424e15-50333-0-6750019954051822-tmp-tgz tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+26 verbose lock tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz /home/wuminghan/.npm/ac424e15-50333-0-6750019954051822-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm extractEntry .npmignore
+30 silly gunzTarPerm extractEntry README.md
+31 silly gunzTarPerm extractEntry index.js
+32 silly gunzTarPerm extractEntry README.md~
+33 silly gunzTarPerm extractEntry lib/mongoServerManager.coffee
+34 silly gunzTarPerm extractEntry test/test.coffee
+35 silly lockFile 8e90a294-ngo-server-manager-0-0-1-package tar:///home/wuminghan/.npm/mongo-server-manager/0.0.1/package
+36 silly lockFile 8e90a294-ngo-server-manager-0-0-1-package tar:///home/wuminghan/.npm/mongo-server-manager/0.0.1/package
+37 silly lockFile ac424e15-50333-0-6750019954051822-tmp-tgz tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+38 silly lockFile ac424e15-50333-0-6750019954051822-tmp-tgz tar:///home/wuminghan/tmp/npm-14834-JT4Xi3KL/1401962950333-0.6750019954051822/tmp.tgz
+39 silly lockFile 3a52ce78- .
+40 silly lockFile 3a52ce78- .
+41 silly publish { name: 'mongo-server-manager',
+41 silly publish   version: '0.0.1',
+41 silly publish   description: 'Helper for managing mongod',
+41 silly publish   main: 'index.js',
+41 silly publish   scripts: { test: 'mocha -R spec -b -t 600000 --compilers coffee:coffee-script/register test/test.coffee' },
+41 silly publish   keywords: [ 'mongodb' ],
+41 silly publish   repository:
+41 silly publish    { type: 'git',
+41 silly publish      url: 'https://github.com/NStal/node-mongo-server-manager' },
+41 silly publish   author: { name: 'NStal' },
+41 silly publish   license: 'ISC',
+41 silly publish   dependencies:
+41 silly publish    { async: '^0.9.0',
+41 silly publish      'coffee-script': '^1.7.1',
+41 silly publish      mongodb: '^1.4.5',
+41 silly publish      portscanner: '^0.2.3' },
+41 silly publish   readme: '# Install\n```bash\nnpm install mongo-server-manager\n```\n# Test\nrequire coffee-script and mocha to be installed.\n\n```bash\nnpm test\n```\n# Usage\n\nI use this module to manage a mongod instance for a desktop application as an embeded database.\n\n```coffee-script\n# all option is critical\n# though port and host will fallback to 27017 and localhost\n# if not provided.\nservice = manager.createInstance {\n    logPath:"./test/db/log"\n    ,pidPath:"./test/db/mongod.pid"\n    ,dbPath:"./test/db"\n    ,port:12345\n    ,host:"localhost"\n    ,binPath:"mongod"\n}\nservice.isDaemonUp (err,pid)->\n    # if daemonis up return pid\n    # or pid is false\n    if not pid\n        service.start (err)->\n\t    # shouldn\'t has err\n            service.isOnline (err,online)->\n\t        # online should be true \n\t\tservice.stop (err)->\n\t\t    process.exit()\n```\n\nDifference between isDaemonUp and isOnline is that isDaemonUp will only check the pid file and corresponding process is running, wile isOnline will only try to connection to the host and port and make sure it\'s a mongodb service.\n\n',
+41 silly publish   readmeFilename: 'README.md',
+41 silly publish   bugs: { url: 'https://github.com/NStal/node-mongo-server-manager/issues' },
+41 silly publish   homepage: 'https://github.com/NStal/node-mongo-server-manager',
+41 silly publish   _id: 'mongo-server-manager@0.0.1',
+41 silly publish   _shasum: 'b92673797cadc115a94adfb7f7d1ce8f472b1bd0',
+41 silly publish   _from: '.' }
+42 verbose url raw mongo-server-manager
+43 verbose url resolving [ 'https://registry.npmjs.org/', './mongo-server-manager' ]
+44 verbose url resolved https://registry.npmjs.org/mongo-server-manager
+45 info trying registry request attempt 1 at 18:09:10
+46 http PUT https://registry.npmjs.org/mongo-server-manager
+47 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+48 info trying registry request attempt 2 at 18:11:27
+49 http PUT https://registry.npmjs.org/mongo-server-manager
+50 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+51 info trying registry request attempt 3 at 18:12:27
+52 http PUT https://registry.npmjs.org/mongo-server-manager
+53 error publish Failed PUT undefined
+54 error network connect ETIMEDOUT
+54 error network This is most likely not a problem with npm itself
+54 error network and is related to network connectivity.
+54 error network In most cases you are behind a proxy or have bad network settings.
+54 error network
+54 error network If you are behind a proxy, please make sure that the
+54 error network 'proxy' config is set properly.  See: 'npm help config'
+55 error System Linux 3.14.4-1-ARCH
+56 error command "/usr/bin/node" "/usr/bin/npm" "publish"
+57 error cwd /home/wuminghan/behemoth/backupCenter/vuvu/workspace/node-mongo-server-manager
+58 error node -v v0.10.28
+59 error npm -v 1.4.9
+60 error syscall connect
+61 error code ETIMEDOUT
+62 error errno ETIMEDOUT
+63 verbose exit [ 1, true ]

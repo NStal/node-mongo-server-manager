@@ -111,12 +111,16 @@ class MongoDbInstance extends EventEmitter
             ,"--pidfilepath",pidPath
             ,"--fork"
         ]
-        cp = child_process.spawn binPath,args
+        cp = child_process.spawn binPath,args,{cwd:@config.cwd or null}
+        cp.on "error",(error)=>
+            callback err
+            callback = ()->
         cp.on "exit",(code)=>
             if code is 0
                 callback()
                 return
             callback {code:code}
+            callback = ()->
             return
         if @config.stdout
             cp.stdout.pipe @config.stdout
